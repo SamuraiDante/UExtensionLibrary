@@ -1,0 +1,1 @@
+Add class for merge functionality, including getting table, filling and updating
