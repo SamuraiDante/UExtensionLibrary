@@ -18,8 +18,11 @@ namespace UExtensionLibrary.Constants
 
     public static class Constants
     {
-
-     
+        public enum Direction
+        {
+            ASC,
+            DESC
+        }
     }
 
 }
