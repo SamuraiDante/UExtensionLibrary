@@ -5,7 +5,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 
-namespace UExtensionLibrary.Web
+namespace UExtensionLibrary.Extensions
 {
     public static class Web
     {

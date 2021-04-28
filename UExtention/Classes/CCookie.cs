@@ -5,7 +5,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 
-namespace UExtensionLibrary.UtilityClasses
+namespace UExtensionLibrary.Classes
 {
     public class CCookie
     {

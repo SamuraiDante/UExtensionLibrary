@@ -14,7 +14,7 @@ using System;
 using System.Data;
 using System.IO;
 
-namespace UExtensionLibrary.Datatables
+namespace UExtensionLibrary.Extensions
 {
 
     public static class Datatables

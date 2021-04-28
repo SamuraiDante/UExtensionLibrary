@@ -8,7 +8,7 @@
 // // -------------------------------------------------------------------------
 // 
 // // -------------------------------------------------------------------------
-// // Imports
+// // Imports 
 // // -------------------------------------------------------------------------
 using System.Collections.Generic;
 using System.Data;
@@ -16,7 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace UExtensionLibrary.XML
+namespace UExtensionLibrary.Extensions
 {
 
     public static class XML

@@ -17,7 +17,7 @@ using System.Data;
 using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
 
-namespace UExtensionLibrary.Numerics
+namespace UExtensionLibrary.Extensions
 {
 
     public static class Numerics
@@ -28,13 +28,28 @@ namespace UExtensionLibrary.Numerics
         ///  ------------------------------------------------------------------------------------------
         /// <summary> Gets the numeric value from the string </summary>
         /// <param name="strExpression">The string expression.</param>
-        /// <returns>System.Double.</returns>
+        /// <returns>System.Double</returns>
         /// <remarks>Acts as VB Val, but gets first numeric value from string regardless or leading or trailing characters</remarks>
         ///  ------------------------------------------------------------------------------------------
         public static double Val(string strExpression)
         {
             double dblReturn = 0;
-            dblReturn = Microsoft.VisualBasic.Conversion.Val(strExpression.Substring(Regex.Match(strExpression, @"\d|\.\d").Index));
+            if(strExpression != null)dblReturn = Microsoft.VisualBasic.Conversion.Val(strExpression.Substring(Regex.Match(strExpression, @"\d|\.\d").Index));
+
+            return dblReturn;
+        }
+        /// ------------------------------------------------------------------------------------------
+        ///  Name: ToDouble
+        ///  ------------------------------------------------------------------------------------------
+        /// <summary> Gets the numeric value from the string </summary>
+        /// <param name="strExpression">The string expression.</param>
+        /// <returns>System.Double</returns>
+        /// <remarks>Acts as VB Val, but gets first numeric value from string regardless or leading or trailing characters.</remarks>
+        ///  ------------------------------------------------------------------------------------------
+        public static double ToDouble(this string strExpression)
+        {
+            double dblReturn = 0;
+            if(strExpression != null)dblReturn = Microsoft.VisualBasic.Conversion.Val(strExpression.Substring(Regex.Match(strExpression, @"\d|\.\d").Index));
 
             return dblReturn;
         }

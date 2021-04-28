@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using Microsoft.VisualBasic.Devices;
 
-namespace UExtensionLibrary.IO
+namespace UExtensionLibrary.Extensions
 {
     public static class IO
     {

@@ -17,8 +17,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Web.Script.Serialization;
+using UExtensionLibrary.Extensions;
 
-namespace UExtensionLibrary.Serialization
+namespace UExtensionLibrary.Extensions
 {
 
     public static class Serialization
@@ -89,7 +90,7 @@ namespace UExtensionLibrary.Serialization
 
 }
 
-namespace UExtensionLibrary.Serialization.Objects
+namespace UExtensionLibrary.Classes
 {
 
     public static class SerializationObjects

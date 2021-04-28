@@ -15,7 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 
-namespace UExtensionLibrary.Enumerables
+namespace UExtensionLibrary.Extensions
 {
 
     public static class Enumerables

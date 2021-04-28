@@ -23,6 +23,13 @@ namespace UExtensionLibrary.Constants
             ASC,
             DESC
         }
+        public enum Mode
+        {
+            Add,
+            Edit,
+            Delete,
+            Replace
+        }
     }
 
 }

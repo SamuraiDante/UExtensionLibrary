@@ -20,9 +20,8 @@ using System.Reflection;
 using System.Text;
 using System.Web.Script.Serialization;
 using System.Windows.Forms.VisualStyles;
-using UExtensionLibrary.Enumerables;
 
-namespace UExtensionLibrary.Reflection
+namespace UExtensionLibrary.Extensions
 {
 
     public static class Reflection

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("UExtentionLibrary")]
+[assembly: AssemblyTitle("UExtensionLibrary")]
 [assembly: AssemblyDescription("Library of useful functions")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Donivan Hughes")]
-[assembly: AssemblyProduct("UExtentionLibrary")]
+[assembly: AssemblyProduct("UExtensionLibrary")]
 [assembly: AssemblyCopyright("Copyright © Donivan Hughes 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

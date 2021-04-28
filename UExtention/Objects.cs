@@ -1,9 +1,8 @@
 ﻿
 
 using System;
-using UExtensionLibrary.Reflection;
 
-namespace UExtensionLibrary.Objects
+namespace UExtensionLibrary.Extensions
 {
     public static class Objects
     {

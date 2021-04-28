@@ -13,7 +13,7 @@
 using System.Windows.Forms;
 using Control = System.Windows.Forms.Control;
 
-namespace UExtensionLibrary.WinForms
+namespace UExtensionLibrary.Extensions
 {
 
     public static class WinForms

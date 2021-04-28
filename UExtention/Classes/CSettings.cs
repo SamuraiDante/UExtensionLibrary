@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.UI;
 using System.IO;
-using UExtensionLibrary.Serialization.Objects;
+using UExtensionLibrary.Extensions;
 
-namespace UExtensionLibrary.UtilityClasses
+namespace UExtensionLibrary.Classes
 {
     public static class CSettings
     {
@@ -24,7 +20,7 @@ namespace UExtensionLibrary.UtilityClasses
         private static void Initialize()
         {
             FileInfo fiSettings = new FileInfo(SaveFileLocation);
-            Settings = fiSettings.Exists ? Serialization.Serialization.DeserializeFile<Dictionary<String, object>>(fiSettings.FullName) : new Dictionary<string, object>();
+            Settings = fiSettings.Exists ? Serialization.DeserializeFile<Dictionary<String, object>>(fiSettings.FullName) : new Dictionary<string, object>();
         }
 
         /// ------------------------------------------------------------------------------------------
@@ -38,7 +34,7 @@ namespace UExtensionLibrary.UtilityClasses
             {
                 FileInfo fiSettings = new FileInfo(SaveFileLocation);
                 if (fiSettings.Exists) fiSettings.Delete();
-                Serialization.Serialization.CacheObject(Settings, fiSettings.FullName); 
+                Serialization.CacheObject(Settings, fiSettings.FullName); 
             }
             Settings = null;
         }

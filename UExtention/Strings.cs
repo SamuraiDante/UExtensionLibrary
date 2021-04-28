@@ -2,7 +2,7 @@
 
 using System;
 
-namespace UExtensionLibrary.Strings
+namespace UExtensionLibrary.Extensions
 {
     public static class Strings
     {
