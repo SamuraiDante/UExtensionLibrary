@@ -18,6 +18,7 @@ using System.IO;
 using System.Text;
 using System.Web.Script.Serialization;
 using UExtensionLibrary.Extensions;
+using System.Linq;
 
 namespace UExtensionLibrary.Extensions
 {
@@ -38,7 +39,29 @@ namespace UExtensionLibrary.Extensions
             string strReturnValue = jssSerializer.Serialize(objToSerialize);
             return strReturnValue;
         }
+        /// <summary>
+        /// Converts dictionary to dictionary that uses a string as the key
+        /// </summary>
+        /// <typeparam name="T">Base Key type</typeparam>
+        /// <typeparam name="T2">Base Value type</typeparam>
+        /// <param name="dicToConvert">The distionary to convert</param>
+        /// <returns></returns>
+        public static Dictionary<string, T2> ToSerializableDictionary<T,T2>(this Dictionary<T,T2> dicToConvert)
+        {
+            Dictionary<string, T2> dicReturnDictionary = new Dictionary<string, T2>();
+            List<string> lstrKeys = new List<string>();
+            List<T2> lobjValues = dicToConvert.Values.ToList();
+            foreach(T objItem in dicToConvert.Keys)
+            {
+                lstrKeys.Add(objItem.ToString());
+            }
+            for(int intIndex = 0; intIndex < lstrKeys.Count; intIndex += 1)
+            {
+                dicReturnDictionary.Add(lstrKeys[intIndex], lobjValues[intIndex]);
+            }
 
+            return dicReturnDictionary;
+        }
         /// ------------------------------------------------------------------------------------------
         /// Name: Deserialize
         /// ------------------------------------------------------------------------------------------
