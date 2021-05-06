@@ -23,7 +23,9 @@ using System.Windows.Forms.VisualStyles;
 
 namespace UExtensionLibrary.Extensions
 {
-
+    /// <summary>
+    /// Class to assist in using the reflection library
+    /// </summary>
     public static class Reflection
     {
 

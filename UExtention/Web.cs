@@ -14,6 +14,7 @@ namespace UExtensionLibrary.Extensions
         ///  ------------------------------------------------------------------------------------------
         /// <summary> Shows the specified message via Javascript. </summary>
         /// <param name="message">The message to show</param>
+        /// <remarks>Adds script to page to show alert.</remarks>
         ///  ------------------------------------------------------------------------------------------
         public static void Show(string message)
         {

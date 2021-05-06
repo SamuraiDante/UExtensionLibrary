@@ -39,6 +39,22 @@ namespace UExtensionLibrary.Extensions
             string strReturnValue = jssSerializer.Serialize(objToSerialize);
             return strReturnValue;
         }
+
+        /// ------------------------------------------------------------------------------------------
+        /// Name: ToJSON
+        /// ------------------------------------------------------------------------------------------
+        /// <summary> Produces a usable JSON representation of the specified object. </summary>
+        /// <param name="objToSerialize">The object to serialize.</param>
+        /// <returns>(String)A usable JSON representation of the specified object</returns>
+        /// ------------------------------------------------------------------------------------------
+        public static string ToJSON(this object objToSerialize)
+        {
+            JavaScriptSerializer jssSerializer = new JavaScriptSerializer { MaxJsonLength = int.MaxValue };
+            string strReturnValue = jssSerializer.Serialize(objToSerialize);
+            return strReturnValue;
+        }
+
+
         /// <summary>
         /// Converts dictionary to dictionary that uses a string as the key
         /// </summary>

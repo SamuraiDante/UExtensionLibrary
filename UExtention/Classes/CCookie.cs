@@ -7,6 +7,9 @@ using System.Web.UI;
 
 namespace UExtensionLibrary.Classes
 {
+    /// <summary>
+    /// Class used to manage cookies
+    /// </summary>
     public class CCookie
     {
 
@@ -23,6 +26,12 @@ namespace UExtensionLibrary.Classes
             Key = strKey;
         }
 
+        /// <summary>
+        /// Sets the value of the cookie to the string
+        /// </summary>
+        /// <param name="Left">Cookie to set</param>
+        /// <param name="Right">Value to set cookie to</param>
+        /// <returns></returns>
         public  static  CCookie  operator +(CCookie Left, string Right)
         {
             HttpCookie ckeBuffer = Left.CurrentRequest.Cookies[Left.Key] ?? new HttpCookie(Left.Key);
@@ -32,6 +41,12 @@ namespace UExtensionLibrary.Classes
 
             return Left;
         }
+        /// <summary>
+        /// Sets the string to the cookies value
+        /// </summary>
+        /// <param name="Left">String to set</param>
+        /// <param name="Right">Cookie to get value from</param>
+        /// <returns></returns>
         public static string operator +(string Left, CCookie Right)
         {
             var httpCookie = Right.CurrentRequest.Cookies[Right.Key];
@@ -44,8 +59,11 @@ namespace UExtensionLibrary.Classes
 
             return strBuffer;
         }
-
-              public static implicit operator string(CCookie ckeToConvert)
+        /// <summary>
+        /// Converts cookie to its string value
+        /// </summary>
+        /// <param name="ckeToConvert"></param>
+        public static implicit operator string(CCookie ckeToConvert)
         {
             string strReturnValue = "";
             strReturnValue += ckeToConvert;

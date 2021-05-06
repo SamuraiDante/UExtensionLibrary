@@ -83,6 +83,30 @@ namespace UExtensionLibrary.Extensions
 
         }
 
+        /// <summary>
+        /// Appends dictionary of the same types
+        /// </summary>
+        /// <typeparam name="T">Key type</typeparam>
+        /// <typeparam name="T2">Value type</typeparam>
+        /// <param name="dicCurrent">Dictionary to append <paramref name="dicToAppend"/> to.</param>
+        /// <param name="dicToAppend">Dictionary to append to <paramref name="dicCurrent"/></param>
+        /// <param name="blnOverwriteExisting">If true, when <paramref name="dicToAppend"/> has keys that <paramref name="dicCurrent"/> already has, the value will be replaced. If false, they will be skipped</param>
+        public static void Append<T,T2>(this Dictionary<T,T2> dicCurrent, Dictionary<T, T2> dicToAppend, bool blnOverwriteExisting = false)
+        {              
+            foreach (T Key in dicToAppend.Keys)
+            {
+                if (dicCurrent.ContainsKey(Key) == false) dicCurrent.Add(Key, dicToAppend[Key]);
+                else
+                {
+                    if (blnOverwriteExisting == true) dicCurrent[Key] = dicToAppend[Key];
+                }
+            }
+        }
+
+        
+
+
+
     }
 
 }

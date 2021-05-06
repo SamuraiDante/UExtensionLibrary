@@ -58,6 +58,11 @@ namespace UExtensionLibrary.Extensions
             return objCurrentWriter.ToString();
         }
 
+        /// <summary>
+        /// Handles the possibility of DBNull
+        /// </summary>
+        /// <param name="objRowValue"></param>
+        /// <returns>Returns <paramref name="objRowValue"/> or returns null if value is DBNull </returns>
         public static object HandleNull(object objRowValue)
         {
             if (objRowValue == DBNull.Value) return null;

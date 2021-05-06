@@ -5,6 +5,9 @@ using UExtensionLibrary.Extensions;
 
 namespace UExtensionLibrary.Classes
 {
+    /// <summary>
+    /// Class used to help store various settings in a cache file
+    /// </summary>
     public static class CSettings
     {
 
