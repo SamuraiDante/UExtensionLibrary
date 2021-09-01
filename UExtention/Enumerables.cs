@@ -14,6 +14,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace UExtensionLibrary.Extensions
 {
@@ -102,8 +103,41 @@ namespace UExtensionLibrary.Extensions
                 }
             }
         }
+        /// <summary>
+        /// Returns if an object is a dictionary
+        /// </summary>
+        /// <returns>System.Bool</returns>
+        //public static bool IsDictionary<T>(this T objToCheck)
+        //{
+        //    bool blnReturnValue = false;
+        //    Type t = objToCheck.GetType();
+        //    blnReturnValue = t.IsGenericType && t.GetGenericTypeDefinition() == typeof(Dictionary<,>);
+        //    return blnReturnValue;
+        //}
 
-        
+        //public static Dictionary<string, object> AssumeDictionary(this object objValue)
+        //{
+        //    Dictionary<string, object> dicReturnDictionary = new Dictionary<string, object>();
+        //    if (objValue.IsDictionary())
+        //    {
+        //        Type DictionaryType = objValue.GetType();
+        //        Type T1 = DictionaryType.GenericTypeArguments[0];
+        //        Type T2 = DictionaryType.GenericTypeArguments[1];
+        //        (Dictionary<T1.GetType(), T2>) Value;
+        //    }
+        //    List<string> lstrKeys = new List<string>();
+        //    List<T2> lobjValues = dicValue.Values.ToList();
+        //    foreach (T objItem in dicValue.Keys)
+        //    {
+        //        lstrKeys.Add(objItem.ToString());
+        //    }
+        //    for (int intIndex = 0; intIndex < lstrKeys.Count; intIndex += 1)
+        //    {
+        //        dicReturnDictionary.Add(lstrKeys[intIndex], lobjValues[intIndex]);
+        //    }
+
+        //    return dicReturnDictionary;
+        //}
 
 
 

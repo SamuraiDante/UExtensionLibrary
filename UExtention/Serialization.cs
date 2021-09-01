@@ -25,7 +25,7 @@ namespace UExtensionLibrary.Extensions
 
     public static class Serialization
     {
-
+        
         /// ------------------------------------------------------------------------------------------
         /// Name: Serialize
         /// ------------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ namespace UExtensionLibrary.Extensions
         /// <param name="objToSerialize">The object to serialize.</param>
         /// <returns>(String)A usable JSON representation of the specified object</returns>
         /// ------------------------------------------------------------------------------------------
-        public static string ToJSON(this object objToSerialize)
+        public static string ToJSON<T>(this T objToSerialize)
         {
             JavaScriptSerializer jssSerializer = new JavaScriptSerializer { MaxJsonLength = int.MaxValue };
             string strReturnValue = jssSerializer.Serialize(objToSerialize);
