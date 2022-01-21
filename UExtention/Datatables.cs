@@ -11,8 +11,10 @@
 // // Imports
 // // -------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq;
 
 namespace UExtensionLibrary.Extensions
 {
@@ -87,6 +89,49 @@ namespace UExtensionLibrary.Extensions
 			}
 
 			return objReturnValue;
+		}
+
+		public static string ToHTML(DataTable dt)
+		{
+			string html = "<table>";
+			//add header row
+			html += "<tr>";
+			for(int i = 0; i < dt.Columns.Count; i++)
+				html += "<td>" + dt.Columns[i].ColumnName + "</td>";
+			html += "</tr>";
+			//add rows
+			for(int i = 0; i < dt.Rows.Count; i++)
+			{
+				html += "<tr>";
+				for(int j = 0; j < dt.Columns.Count; j++)
+					html += "<td>" + dt.Rows[i][j].ToString() + "</td>";
+				html += "</tr>";
+			}
+			html += "</table>";
+			return html;
+		}
+
+		public static DataTable FromDynamicList(List<dynamic> objList)
+		{
+			DataTable dt = new DataTable();
+			if(objList != null && objList.Count > 0)
+			{
+				foreach(var Prop in objList.First())
+				{
+					if(dt.Columns.Contains(Prop.Key) == false)
+						dt.Columns.Add(Prop.Key);
+				}
+				foreach(var Item in objList)
+				{
+					DataRow dr = dt.NewRow();
+					foreach(var Prop in Item)
+					{
+						dr[Prop.Key] = Prop.Value;
+					}
+					dt.Rows.Add(dr);
+				}
+			}
+			return dt;
 		}
 	}
 }
