@@ -16,6 +16,8 @@ using System.Data;
 using System.IO;
 using System.Linq;
 
+using Microsoft.CSharp;
+
 namespace UExtensionLibrary.Extensions
 {
 	public static class Datatables
@@ -116,10 +118,10 @@ namespace UExtensionLibrary.Extensions
 			DataTable dt = new DataTable();
 			if(objList != null && objList.Count > 0)
 			{
-				foreach(var Prop in objList.First())
+				foreach(var Property in objList.First())
 				{
-					if(dt.Columns.Contains(Prop.Key) == false)
-						dt.Columns.Add(Prop.Key);
+					if(dt.Columns.Contains(Property.Key) == false)
+						dt.Columns.Add(Property.Key);
 				}
 				foreach(var Item in objList)
 				{
