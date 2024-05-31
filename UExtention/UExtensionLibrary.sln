@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31112.23
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UExtensionLibrary", "UExtensionLibrary.csproj", "{05913B4B-20D4-4C7D-9857-F116930D08FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingApplication", "..\TestingApplication\TestingApplication.csproj", "{E240F988-D31C-4462-AECF-DBF87E2D6F3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{05913B4B-20D4-4C7D-9857-F116930D08FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05913B4B-20D4-4C7D-9857-F116930D08FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05913B4B-20D4-4C7D-9857-F116930D08FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E240F988-D31C-4462-AECF-DBF87E2D6F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E240F988-D31C-4462-AECF-DBF87E2D6F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E240F988-D31C-4462-AECF-DBF87E2D6F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E240F988-D31C-4462-AECF-DBF87E2D6F3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
