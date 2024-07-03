@@ -5,7 +5,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 
-namespace UExtensionLibrary.Classes
+namespace UExtensionLibrary.Classes.CCookies
 {
     /// <summary>
     /// Class used to manage cookies

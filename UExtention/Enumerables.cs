@@ -23,23 +23,23 @@ namespace UExtensionLibrary.Extensions
 	/// </summary>
 	public static class Enumerables
 	{
-		/// ------------------------------------------------------------------------------------------
-		///  Name: Reverse
-		///  ------------------------------------------------------------------------------------------
-		/// <summary> Reverses the ILists content order </summary>
-		/// <param name="IListToExtend">The IList to reverse</param>
-		///  ------------------------------------------------------------------------------------------
-		public static void Reverse(this IList IListToExtend)
-		{
-			object[] lstReturn = new object[IListToExtend.Count];
-			IListToExtend.CopyTo(lstReturn, 0);
-			Array.Reverse(lstReturn);
-			IListToExtend.Clear();
-			for(int i = 0; i < lstReturn.Length; i += 1)
-			{
-				IListToExtend.Add(lstReturn[i]);
-			}
-		}
+		///// ------------------------------------------------------------------------------------------
+		/////  Name: Reverse
+		/////  ------------------------------------------------------------------------------------------
+		///// <summary> Reverses the ILists content order </summary>
+		///// <param name="IListToExtend">The IList to reverse</param>
+		/////  ------------------------------------------------------------------------------------------
+		//public static void Reverse(this IList IListToExtend)
+		//{
+		//	object[] lstReturn = new object[IListToExtend.Count];
+		//	IListToExtend.CopyTo(lstReturn, 0);
+		//	Array.Reverse(lstReturn);
+		//	IListToExtend.Clear();
+		//	for(int i = 0; i < lstReturn.Length; i += 1)
+		//	{
+		//		IListToExtend.Add(lstReturn[i]);
+		//	}
+		//}
 
 		/// ------------------------------------------------------------------------------------------
 		///  Name: IsNullOrEmpty

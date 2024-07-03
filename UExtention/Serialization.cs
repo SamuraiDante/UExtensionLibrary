@@ -16,16 +16,17 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using System.Web.Script.Serialization;
+
 using UExtensionLibrary.Extensions;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace UExtensionLibrary.Extensions
 {
 
     public static class Serialization
     {
-        
+
         /// ------------------------------------------------------------------------------------------
         /// Name: Serialize
         /// ------------------------------------------------------------------------------------------
@@ -35,8 +36,7 @@ namespace UExtensionLibrary.Extensions
         /// ------------------------------------------------------------------------------------------
         public static string Serialize(object objToSerialize)
         {
-            JavaScriptSerializer jssSerializer = new JavaScriptSerializer {MaxJsonLength = int.MaxValue};
-            string strReturnValue = jssSerializer.Serialize(objToSerialize);
+            string strReturnValue = JsonConvert.SerializeObject(objToSerialize);
             return strReturnValue;
         }
 
@@ -49,8 +49,8 @@ namespace UExtensionLibrary.Extensions
         /// ------------------------------------------------------------------------------------------
         public static string ToJSON<T>(this T objToSerialize)
         {
-            JavaScriptSerializer jssSerializer = new JavaScriptSerializer { MaxJsonLength = int.MaxValue };
-            string strReturnValue = jssSerializer.Serialize(objToSerialize);
+
+            string strReturnValue = JsonConvert.SerializeObject(objToSerialize);
             return strReturnValue;
         }
 
@@ -62,16 +62,16 @@ namespace UExtensionLibrary.Extensions
         /// <typeparam name="T2">Base Value type</typeparam>
         /// <param name="dicToConvert">The distionary to convert</param>
         /// <returns></returns>
-        public static Dictionary<string, T2> ToSerializableDictionary<T,T2>(this Dictionary<T,T2> dicToConvert)
+        public static Dictionary<string, T2> ToSerializableDictionary<T, T2>(this Dictionary<T, T2> dicToConvert)
         {
             Dictionary<string, T2> dicReturnDictionary = new Dictionary<string, T2>();
             List<string> lstrKeys = new List<string>();
             List<T2> lobjValues = dicToConvert.Values.ToList();
-            foreach(T objItem in dicToConvert.Keys)
+            foreach (T objItem in dicToConvert.Keys)
             {
                 lstrKeys.Add(objItem.ToString());
             }
-            for(int intIndex = 0; intIndex < lstrKeys.Count; intIndex += 1)
+            for (int intIndex = 0; intIndex < lstrKeys.Count; intIndex += 1)
             {
                 dicReturnDictionary.Add(lstrKeys[intIndex], lobjValues[intIndex]);
             }
@@ -88,8 +88,8 @@ namespace UExtensionLibrary.Extensions
         /// ------------------------------------------------------------------------------------------
         public static T Deserialize<T>(string strJSON)
         {
-            JavaScriptSerializer jssSerializer = new JavaScriptSerializer {MaxJsonLength = int.MaxValue};
-            T objReturnValue = jssSerializer.Deserialize<T>(strJSON);
+
+            T objReturnValue = JsonConvert.DeserializeObject<T>(strJSON);
             return objReturnValue;
         }
 
@@ -103,9 +103,10 @@ namespace UExtensionLibrary.Extensions
         /// ------------------------------------------------------------------------------------------
         public static T DeserializeFile<T>(string strPath)
         {
-            JavaScriptSerializer jssSerializer = new JavaScriptSerializer {MaxJsonLength = int.MaxValue};
+
+
             string strJSON = File.ReadAllText(strPath);
-            T objReturnValue = jssSerializer.Deserialize<T>(strJSON);
+            T objReturnValue = JsonConvert.DeserializeObject<T>(strJSON);
             return objReturnValue;
         }
 
@@ -119,17 +120,17 @@ namespace UExtensionLibrary.Extensions
         public static void CacheObject(this object objToCache, string strPath)
         {
             string strJSON = Serialize(objToCache);
-            File.WriteAllText(strPath, strJSON, Encoding.GetEncoding(1252));
-            
+            File.WriteAllText(strPath, strJSON);
+
         }
 
-       
+
 
     }
 
 }
 
-namespace UExtensionLibrary.Classes
+namespace UExtensionLibrary.Classes.Serializable
 {
 
     public static class SerializationObjects
@@ -208,24 +209,24 @@ namespace UExtensionLibrary.Classes
                     //Dim dicBuffer = m_ldicRows(0)
                     foreach (string strKey in m_dicColumns.Keys)
                     {
-                        Type typColumnType = typeof (string);
+                        Type typColumnType = typeof(string);
 
                         switch (m_dicColumns[strKey])
                         {
                             case "String":
-                                typColumnType = typeof (string);
+                                typColumnType = typeof(string);
                                 break;
                             case "Date":
-                                typColumnType = typeof (DateTime);
+                                typColumnType = typeof(DateTime);
                                 break;
                             case "DateTime":
-                                typColumnType = typeof (DateTime);
+                                typColumnType = typeof(DateTime);
                                 break;
                             case "Decimal":
-                                typColumnType = typeof (decimal);
+                                typColumnType = typeof(decimal);
                                 break;
                             case "Integer":
-                                typColumnType = typeof (int);
+                                typColumnType = typeof(int);
                                 break;
                         }
                         dtDeserializedDataTable.Columns.Add(strKey, typColumnType);

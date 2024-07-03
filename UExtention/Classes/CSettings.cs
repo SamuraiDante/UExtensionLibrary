@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.IO;
+using System.Windows.Forms;
 using UExtensionLibrary.Extensions;
 
-namespace UExtensionLibrary.Classes
+namespace UExtensionLibrary.Classes.CSettings
 {
     /// <summary>
-    /// Class used to help store various settings in a cache file
+    /// Class used to help store various settings in a cache file, quick and dirty
     /// </summary>
     public static class CSettings
     {
 
-        private static readonly string SaveFileLocation = Environment.SpecialFolder.CommonApplicationData.ToString();
+        private static readonly string SaveFileLocation = Environment.SpecialFolder.CommonApplicationData.ToString() + @"\" + Application.ProductName + "_Settings.json";
         private static Dictionary<String, object> Settings;
         private static bool IsDirty = false;
 
@@ -48,19 +50,31 @@ namespace UExtensionLibrary.Classes
         ///  ------------------------------------------------------------------------------------------
         /// <summary> Gets the value for the specified key. </summary>
         /// <param name="Key">The setting key</param>
+        /// <param name="Value"></param>
         /// <returns>System.Object.</returns>
         ///  ------------------------------------------------------------------------------------------
-        public static object Get(string Key)
+        public static bool Get<T>(string Key, out T Value) 
         {
-            object objReturn = null;
 
+            bool ReturnValue = false;
+            //Uncache the settings file
             Initialize();
 
-            objReturn = Settings[Key];
-
+            //If we have the key, return the value
+            if (Settings.ContainsKey(Key))
+            {
+                Value = (T)Settings[Key];
+                ReturnValue = true;
+            }
+            else
+            {
+                Value = default;
+                ReturnValue = false;
+            }
+            //Clean up
             Dispose();
 
-            return objReturn;
+            return ReturnValue;
         }
 
         /// ------------------------------------------------------------------------------------------
@@ -74,7 +88,9 @@ namespace UExtensionLibrary.Classes
         {
             Initialize();
 
+            //Let's us know to save in the dispose method
             IsDirty = true;
+
             if (Settings.ContainsKey(Key)) Settings[Key] = Value;
             else Settings.Add(Key, Value);
 

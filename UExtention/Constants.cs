@@ -12,6 +12,8 @@
 // // -------------------------------------------------------------------------
 using System.Data;
 using System.IO;
+using System.IO.Ports;
+using System.Text;
 
 namespace UExtensionLibrary.Constants
 {
@@ -30,6 +32,8 @@ namespace UExtensionLibrary.Constants
             Delete,
             Replace
         }
+
+       
     }
 
 }

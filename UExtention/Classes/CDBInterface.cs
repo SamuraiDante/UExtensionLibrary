@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UExtensionLibrary.Classes
+namespace UExtensionLibrary.Classes.Incomplete
 {   /// <summary>
 	///	Unfinished, dont use
 	/// </summary>

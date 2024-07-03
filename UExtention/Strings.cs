@@ -59,5 +59,34 @@ namespace UExtensionLibrary.Extensions
 		{
 			return TrimSplit(strBase, strSeparator.ToCharArray());
 		}
-	}
+
+		
+		public static string PadEquallyWith(this string Base, char Padding,int Length)
+		{
+			string ReturnValue = Base;
+			
+			int LengthNeeded = Length - Base.Length;
+			if (LengthNeeded > 0)
+			{
+				bool Even = !(LengthNeeded % 2 == 0);
+
+				if (Even)
+				{
+					ReturnValue = ReturnValue.PadLeft((LengthNeeded / 2) + ReturnValue.Length, Padding);
+					ReturnValue = ReturnValue.PadRight(Length, Padding);
+				}
+				else
+				{
+					ReturnValue = ReturnValue.PadLeft((LengthNeeded / 2) + ReturnValue.Length, Padding);
+					ReturnValue = ReturnValue.PadRight(Length, Padding);
+				}
+			}
+			return ReturnValue;
+
+
+        }
+		
+
+      
+    }
 }
