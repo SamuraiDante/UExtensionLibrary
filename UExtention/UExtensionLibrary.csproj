@@ -1,190 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\..\..\source\repos\TesterApp\packages\Microsoft.NET.Test.Sdk.17.10.0\build\net462\Microsoft.NET.Test.Sdk.props" Condition="Exists('..\..\..\..\source\repos\TesterApp\packages\Microsoft.NET.Test.Sdk.17.10.0\build\net462\Microsoft.NET.Test.Sdk.props')" />
-  <Import Project="..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\build\netstandard2.0\Microsoft.CodeCoverage.props" Condition="Exists('..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\build\netstandard2.0\Microsoft.CodeCoverage.props')" />
-  <Import Project="..\..\..\..\source\repos\TesterApp\packages\xunit.runner.visualstudio.2.8.1\build\net462\xunit.runner.visualstudio.props" Condition="Exists('..\..\..\..\source\repos\TesterApp\packages\xunit.runner.visualstudio.2.8.1\build\net462\xunit.runner.visualstudio.props')" />
-  <Import Project="..\..\..\..\source\repos\TesterApp\packages\xunit.core.2.8.1\build\xunit.core.props" Condition="Exists('..\..\..\..\source\repos\TesterApp\packages\xunit.core.2.8.1\build\xunit.core.props')" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{05913B4B-20D4-4C7D-9857-F116930D08FF}</ProjectGuid>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UExtensionLibrary</RootNamespace>
-    <AssemblyName>UExtensionLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageOutputPath>C:\packages</PackageOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\Debug\UExtensionLibrary.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="HtmlAgilityPack, Version=1.11.61.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\HtmlAgilityPack.1.11.61\lib\Net45\HtmlAgilityPack.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\Microsoft.Extensions.Logging.Abstractions.8.0.1\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\lib\net462\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Collections.Immutable.8.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Metadata, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Reflection.Metadata.8.0.0\lib\net462\System.Reflection.Metadata.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Security.AccessControl, Version=6.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Security.AccessControl.6.0.1\lib\net461\System.Security.AccessControl.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Pkcs, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Security.Cryptography.Pkcs.8.0.0\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Xml, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Security.Cryptography.Xml.8.0.1\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding.CodePages, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Text.Encoding.CodePages.8.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\source\repos\TesterApp\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Classes\CConsole.cs" />
-    <Compile Include="Classes\CDBInterface.cs" />
-    <Compile Include="Classes\CPerformance.cs" />
-    <Compile Include="Classes\CSettings.cs" />
-    <Compile Include="Classes\CCookie.cs" />
-    <Compile Include="Constants.cs" />
-    <Compile Include="DateTimes.cs" />
-    <Compile Include="HTML.cs" />
-    <Compile Include="NetSuite.cs" />
-    <Compile Include="IO.cs" />
-    <Compile Include="Conversion.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Reflection.cs" />
-    <Compile Include="Serialization.cs" />
-    <Compile Include="Objects.cs" />
-    <Compile Include="Strings.cs" />
-    <Compile Include="WinForms.cs" />
-    <Compile Include="XMLs.cs" />
-    <Compile Include="Datatables.cs" />
-    <Compile Include="Enumerables.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ToDo.txt" />
-  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\..\source\repos\TesterApp\packages\xunit.core.2.8.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\source\repos\TesterApp\packages\xunit.core.2.8.1\build\xunit.core.props'))" />
-    <Error Condition="!Exists('..\..\..\..\source\repos\TesterApp\packages\xunit.core.2.8.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\source\repos\TesterApp\packages\xunit.core.2.8.1\build\xunit.core.targets'))" />
-    <Error Condition="!Exists('..\..\..\..\source\repos\TesterApp\packages\xunit.runner.visualstudio.2.8.1\build\net462\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\source\repos\TesterApp\packages\xunit.runner.visualstudio.2.8.1\build\net462\xunit.runner.visualstudio.props'))" />
-    <Error Condition="!Exists('..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\build\netstandard2.0\Microsoft.CodeCoverage.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\build\netstandard2.0\Microsoft.CodeCoverage.props'))" />
-    <Error Condition="!Exists('..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\build\netstandard2.0\Microsoft.CodeCoverage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\build\netstandard2.0\Microsoft.CodeCoverage.targets'))" />
-    <Error Condition="!Exists('..\..\..\..\source\repos\TesterApp\packages\Microsoft.NET.Test.Sdk.17.10.0\build\net462\Microsoft.NET.Test.Sdk.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\source\repos\TesterApp\packages\Microsoft.NET.Test.Sdk.17.10.0\build\net462\Microsoft.NET.Test.Sdk.props'))" />
-    <Error Condition="!Exists('..\..\..\..\source\repos\TesterApp\packages\Microsoft.NET.Test.Sdk.17.10.0\build\net462\Microsoft.NET.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\source\repos\TesterApp\packages\Microsoft.NET.Test.Sdk.17.10.0\build\net462\Microsoft.NET.Test.Sdk.targets'))" />
-  </Target>
-  <Import Project="..\..\..\..\source\repos\TesterApp\packages\xunit.core.2.8.1\build\xunit.core.targets" Condition="Exists('..\..\..\..\source\repos\TesterApp\packages\xunit.core.2.8.1\build\xunit.core.targets')" />
-  <Import Project="..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\build\netstandard2.0\Microsoft.CodeCoverage.targets" Condition="Exists('..\..\..\..\source\repos\TesterApp\packages\Microsoft.CodeCoverage.17.10.0\build\netstandard2.0\Microsoft.CodeCoverage.targets')" />
-  <Import Project="..\..\..\..\source\repos\TesterApp\packages\Microsoft.NET.Test.Sdk.17.10.0\build\net462\Microsoft.NET.Test.Sdk.targets" Condition="Exists('..\..\..\..\source\repos\TesterApp\packages\Microsoft.NET.Test.Sdk.17.10.0\build\net462\Microsoft.NET.Test.Sdk.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.61" />
+    <PackageReference Include="Microsoft.CodeCoverage" Version="17.10.0" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+    <PackageReference Include="System.Reflection.Metadata" Version="8.0.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="8.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.1" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+  </ItemGroup>
 </Project>
