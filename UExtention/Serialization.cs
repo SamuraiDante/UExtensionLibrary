@@ -1,4 +1,4 @@
-﻿// // -------------------------------------------------------------------------
+﻿    // // -------------------------------------------------------------------------
 // // File: Enumerables.cs
 // // Author: Hughes, Donivan(hughes.dh.1)
 // // Abstract: TODO: Add abstract
@@ -120,6 +120,10 @@ namespace UExtensionLibrary.Extensions
         public static void CacheObject(this object objToCache, string strPath)
         {
             string strJSON = Serialize(objToCache);
+            if(Directory.Exists(Path.GetDirectoryName(strPath)) == false)
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(strPath));
+            }
             File.WriteAllText(strPath, strJSON);
 
         }

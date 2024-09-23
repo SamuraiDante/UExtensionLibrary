@@ -60,33 +60,57 @@ namespace UExtensionLibrary.Extensions
 			return TrimSplit(strBase, strSeparator.ToCharArray());
 		}
 
-		
-		//public static string PadEquallyWith(this string Base, char Padding,int Length)
-		//{
-		//	string ReturnValue = Base;
-			
-		//	int LengthNeeded = Length - Base.Length;
-		//	if (LengthNeeded > 0)
-		//	{
-		//		bool Even = !(LengthNeeded % 2 == 0);
+        public static bool ContainsAll(this string source, string[] values)
+        {
+            
+            foreach (string value in values)
+            {
+                if (source.ToLower().Contains(value.ToLower()) == false)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
-		//		if (Even)
-		//		{
-		//			ReturnValue = ReturnValue.PadLeft((LengthNeeded / 2) + ReturnValue.Length, Padding);
-		//			ReturnValue = ReturnValue.PadRight(Length, Padding);
-		//		}
-		//		else
-		//		{
-		//			ReturnValue = ReturnValue.PadLeft((LengthNeeded / 2) + ReturnValue.Length, Padding);
-		//			ReturnValue = ReturnValue.PadRight(Length, Padding);
-		//		}
-		//	}
-		//	return ReturnValue;
+        public static bool ContainsAny(this string source, string[] values)
+        {
+      
+            foreach (string value in values)
+            {
+                if (source.ToLower().Contains(value.ToLower()))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        //public static string PadEquallyWith(this string Base, char Padding,int Length)
+        //{
+        //	string ReturnValue = Base;
+
+        //	int LengthNeeded = Length - Base.Length;
+        //	if (LengthNeeded > 0)
+        //	{
+        //		bool Even = !(LengthNeeded % 2 == 0);
+
+        //		if (Even)
+        //		{
+        //			ReturnValue = ReturnValue.PadLeft((LengthNeeded / 2) + ReturnValue.Length, Padding);
+        //			ReturnValue = ReturnValue.PadRight(Length, Padding);
+        //		}
+        //		else
+        //		{
+        //			ReturnValue = ReturnValue.PadLeft((LengthNeeded / 2) + ReturnValue.Length, Padding);
+        //			ReturnValue = ReturnValue.PadRight(Length, Padding);
+        //		}
+        //	}
+        //	return ReturnValue;
 
 
         //}
-		
 
-      
+
+
     }
 }
