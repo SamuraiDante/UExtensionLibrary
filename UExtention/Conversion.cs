@@ -60,7 +60,7 @@ namespace UExtensionLibrary.Methods
 
 namespace UExtensionLibrary.Extensions
 {
-    public static partial class Convertion
+    public static partial class Conversion
     {
         #region Short
 
